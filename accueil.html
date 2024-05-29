@@ -1,4 +1,150 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/logo_onglet.png" class="rounded-circle img-circle" type="image/png">
+</head>
+<body>
+    <!-- navigateur -->
+    <div class="overlay">
+        <div class="navbar navbar-expand-md">
+            <a href="accueil.html">
+                <img src="images/logo_accueil.png" width="300px" height="80px" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="tout_parcourir.html">Tout parcourir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rechercher.html">Rechercher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mes_rdv.html">Rendez-vous</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="votre_compte.html">Mon Compte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-  
+        <!-- carousel -->    
+        <main>
+			 <h2 class="title">Les événements de la semaine</h2>
+            <div class="carousel-container">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-target="#carousel" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-target="#carousel" data-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-target="#carousel" data-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="images/carrousel1.jpg" class="d-block w-100" alt="Carousel Image 1" height="300px" ">
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="carousel-caption d-md-block text-start">
+                                        <h5>L’ECE Blue Magic Paris Basketball remporte le championnat universitaire!</h5>
+                                        <p>L’ECE Blue Magic Paris Basketball a remporté le championnat universitaire de la Région Île-de-France, marquant une première historique pour l'équipe. <br>
+										Le 8 février 2024, ils ont brillé en finale contre l'ILEPS. <br>
+										Les supporters de l’ECE ont créé une ambiance festive avec des t-shirts et des chants. <br>
+										Malgré une remontée de l'ILEPS en seconde période, l'ECE a maintenu son avance.<br>
+										La victoire de 71 à 49 a été marquée par des performances exceptionnelles, notamment en défense et en attaque, assurant un triomphe pour toute l'école.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="images/carousel2.png" class="d-block w-100" alt="Carousel Image 2" height="300px">
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="carousel-caption d-md-block text-start">
+                                        <h5>L’INSEEC s’associe à l’Olympique de Marseille</h5>
+                                        <p>L'INSEEC et l’Olympique de Marseille s’associent pour former des étudiants en management du sport. <br>
+										Dès septembre 2024, des cursus Bachelor et Master offriront des cours à l'Orange Vélodrome. <br>
+										Le partenariat enrichira la formation par l'expérience du club et favorisera l'employabilité des étudiants. <br>
+										Des initiatives viseront à inclure les jeunes des Quartiers Prioritaires de la Ville. <br>
+										Sylvain Coulange souligne l'importance de cette collaboration pour guider les jeunes dans le monde professionnel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="images/carousel3.jpg" class="d-block w-100" alt="Carousel Image 3" height="300px">
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="carousel-caption d-md-block text-start">
+                                        <h5>OMNES Education lance Footbolitique</h5>
+                                        <p> OMNES Education lance Footbolitique, une série qui analyse les événements géopolitiques à travers le prisme du football.<br> 
+										Destinée aux étudiants des 13 écoles du groupe, la série débute avec un épisode sur les scandales de la Coupe du Monde 2022 au Qatar. <br>
+										Chaque mois, un nouvel épisode permettra de décrypter divers événements historiques.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<!-- buttons -->	
+                    <button class="carousel-control-prev" type="button" data-target="#carousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carousel" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <div class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p>
+                            <a class="footer-text">Contact</a><br>
+                            <a class="footer-link" href="tel:+33144390600">+33 1 44 39 06 00</a><br>
+                            <a class="footer-link" href="mailto:sportify.ssjm@gmail.com">sportify.ssjm@gmail.com</a><br>
+                        </p>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <p>
+                            <a class="footer-text">Adresse</a><br>
+                            <a class="footer-link" href="https://maps.app.goo.gl/5CucWAQD4ZE6sU4c6" target="_blank">10 Rue Sextius Michel, 75015 Paris, France</a><br>
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.732586425122!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Campus%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1716995254795!5m2!1sfr!2sfr" width="200px" height="60px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="footer-copyright">
+                            <p>
+                                &copy; 2024 Copyright Sportify
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
