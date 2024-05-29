@@ -105,6 +105,9 @@ input[type=text]:focus {
 }
 
 /*--------------------------------------------------------------- main ----------------------------------------------------------------*/
+.container-fluid {
+	padding: 100px;
+}
 .title {
     padding-top: 50px;
     padding-bottom: 10px;
@@ -116,11 +119,13 @@ input[type=text]:focus {
     padding: 10px;
 }
 .text  {
+	padding-top: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #fff;
     font-size: 20px;
-    text-align: justify;
-    padding-bottom: 10px;
+    text-align: center;
+	font-size: 11px;
+	padding-bottom: 0px;
 }
 .liste {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -146,7 +151,7 @@ input[type=text]:focus {
 }
 
 h2{
-	color: #A4071F;
+	color: #fff;
 	font-size: 40px;
 	text-align: center;
 	font-weight: bold;
@@ -156,9 +161,11 @@ h5{
 	color: #A4071F;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: bold;
+	padding-bottom: 0px;
 }
 
 /*------------------------------------------------------------- Carousel -------------------------------------------------------------*/
+
 
 .carousel-container {
     padding-top: 20px;
@@ -180,6 +187,13 @@ h5{
 
 .carousel-caption {
     font-size: 12px;
+	padding-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+	font-size: 11px;
+	padding-bottom: 0px;
 }
 
 .carousel-control-prev,
@@ -188,8 +202,8 @@ h5{
     height: 40px;
     color: #fff;
     background-color: #A4071F;
-    top: 50%;
-    transform: translateY(-50%);
+    
+	top: 50%;
     border: none;
     display: flex;
     align-items: center;
@@ -245,4 +259,5 @@ right: -70px;
 .carousel-indicators button:hover {
     background-color: rgba(164, 7, 31, 0.5); 
 }
+
 
