@@ -50,6 +50,8 @@ if($dbname){
                 echo "<td>" . $data['MpContact'] . "</td>";
                 echo "</tr>";
                 echo "</table>";
+		header('Location: votre_compte.html');
+		exit();
 			} else {
 				echo "account does not exist";
 			}
