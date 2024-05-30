@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <link href="signup.php"
+</head>
+<html>
+<body>
+
+<h2>Formulaire de creation de compte client</h2>
+
+<form method=POST/GET action="<?php echo $_SERVER['PHP_SELF'];?>">
+
+    ID d'utilisateur: <button onclick="checkNumber()" name="user_id">génération de l'ID</button>
+    <br>
+	Email: <input type="email" name="mail">
+	<br>
+	Nom: <input type="text" name="Nom">
+	<br>
+	Prenom: <input type="text" name="Prenom">
+	<br>
+	Tel: <input type="tel" name="tel">
+	<br>
+    Mot de passe: <input type="password" name="password">
+	<br>
+	Verification Mot de passe: <input type="password" name="cpassword">
+    <br>
+    <input type="submit">
+</form>
+
+
+ 
+ 
+<script>
+function checkNumber() {
+  var randomNumber = Math.floor(Math.random() - 50) + 50; 
+}
+</script>
+
+
+</body>
+</html>
+
+
