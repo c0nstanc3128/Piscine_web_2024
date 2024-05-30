@@ -340,3 +340,85 @@ right: -70px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+
+
+/*-------------------------------------------- activites sportives/ sports de competition---------------------------------------------*/
+
+.row_menu {
+    display: flex;
+    gap: 20px;
+}
+
+.row_menu img {
+    margin: 20px;
+	width: 350px;
+	height: 130px;
+	margin-bottom: 20px
+}
+
+/*---------------------------------------------------------- salle de sport OMNES-----------------------------------------------------------*/
+.salle {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fff;
+}
+.box {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+	margin-left: 200px;
+	position:relative;
+    width: 700px;
+    margin-top: 20px;
+	margin-bottom: 20px;
+    display: flex;
+	border-radius: 10%;
+}
+
+.col-sm-6{
+	margin-top: 15px;
+    display: flex;
+    gap: 20px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*---------------------------------------------------------- Nos services-----------------------------------------------------------*/
+.dropdown {
+    position: relative;
+    display: flex;
+}
+.btn_services {
+	background-color: #A4071F;
+	color:#fff;
+}
+
+.btn-contenu {
+    display: none;
+    position: absolute;
+    background-color: #A4071F;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	font-size: 20px;
+    line-height: 20px;
+}
+
+.dropdown:hover .btn-contenu {
+    display: block;
+}
+
+.dropdown-item {
+    color:#A4071F;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	background-color: #fff;
+}
+
+.dropdown-item:hover {
+	color:#A4071F
+}
+
