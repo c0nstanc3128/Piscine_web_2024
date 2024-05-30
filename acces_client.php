@@ -6,6 +6,15 @@ $dbname = "piscine";
 
 // Créer une connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
+$uservername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "DB_1";
+
+// Verif la connection
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
+}
 
 if($dbname){
 	$user = $_POST["username"];
