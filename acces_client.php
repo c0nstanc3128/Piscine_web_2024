@@ -51,7 +51,7 @@ if($dbname){
                 echo "</tr>";
                 echo "</table>";
 			} else {
-				echo "Book not found";
+				echo "account does not exist";
 			}
 	}
 }
