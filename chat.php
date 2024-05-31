@@ -5,6 +5,8 @@
   <body>
   
     <h2>Chatroom</h2>
+	
+	<?php require($_SESSION['username']);
     
     <button onclick="openChatroom()">Open Chatroom</button>
     
