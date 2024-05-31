@@ -3,8 +3,6 @@
 </head>
 <html>
   <body>
-      
-
   
     <h2>Chatroom</h2>
     
