@@ -422,3 +422,166 @@ right: -70px;
 	color:#A4071F
 }
 
+
+/*--------------------------------------------------------------- horaires ---------------------------------------------------------------*/
+table{
+  border: 1px solid white;
+  border-collapse: collapse;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+	color: #fff;
+	border: 1px solid white;
+	background-color:#000;
+}
+
+/*--------------------------------------------------------------- personnels ---------------------------------------------------------------*/
+.td a {
+    color: white;
+ }
+ 
+.td img {
+    width: 20px;
+    height: 20px;
+}
+
+/*-----------------------------------------------------------regles d'utilisation-----------------------------------------------------------*/
+.box2 {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+	margin-left: 200px;
+	position:relative;
+    width: 700px;
+    margin-top: 20px;
+	margin-bottom: 20px;
+    display: flex;
+	border-radius: 10%;
+}
+
+.box2 li {
+    color: white;
+	text-align:left;
+
+}
+.box2 p {
+    color: white;
+}
+/*--------------------------------------------------------------- coach ---------------------------------------------------------------*/
+.col-sm-9 {
+    margin-top: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fff;
+    text-align: justify;
+}
+
+.box3 {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+	margin-left: 150px;
+	position:relative;
+    width: 900px;
+    margin-top: 20px;
+	margin-bottom: 20px;
+    display: flex;
+	border-radius: 5%;
+}
+
+.box3_contenu {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+.contact_info{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+	text-align:center;
+}
+
+.coach_contact {
+    color: #fff;
+    cursor: pointer;
+}
+.coach_contact:hover {
+    color: #A4071F;
+    text-decoration: none;
+}
+
+.coach_btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:#A4071F;
+    padding: 10px 10px;
+}
+
+.coach_btn:hover {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+	color: #A4071F;
+}
+
+.ligne {
+    width: 100%;
+    border-radius: 5px;
+    border-top: 1px solid white;
+    height: 2px;
+    background-color: white;
+    margin-top: 30px;
+}
+
+
+.dispo {
+    background-color: #333334;
+    text-align: center;
+}
+
+.nodispo {
+    background-color: #A4071F;
+    text-align: center;
+}
+
+.btnrdv {
+    color: #fff;
+    text-align:center;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+    background-color: #333334;
+	margin-left: 150px;
+}
+.btnrdv:hover {
+    color: #000;
+    background-color: #b3b3b3;
+    text-decoration: none;
+}
+.dropdown-item {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.dropdown-item:hover {
+    background-color: #e4e4e4;
+}
+
+.rdv-bouton{
+	margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:#A4071F;
+    padding: 10px 10px;
+	text-align:center;
+}
+
