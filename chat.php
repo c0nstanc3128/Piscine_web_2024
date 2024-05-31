@@ -22,6 +22,7 @@
     <script>
 
     const fs = require('fs');
+    var file_name;
    
     function openChatroom() {
         var chatroomWindow = window.open('', 'Chatroom', 'width=500,height=500');
@@ -60,11 +61,13 @@
                     
                 } else {
                     console.log('The file exists.');
+                    file_name = nom_fichier2;
                   read_chatroom(nom_fichier2);
                 }
             });
         } else {
             console.log('The file exists.');
+            file_name = nom_fichier1;
             read_chatroom(nom_fichier1);
         }
       });
@@ -79,7 +82,7 @@
         display_chatroom(namefile_xml);
       };
     }
-    function display_chatroom(fname){
+    function display_chatroom(){
       // Fetch the XML data from the server
         fetch(fname)
             .then(response => response.text())
@@ -128,7 +131,7 @@ function addMessage() {
         '</message>';
 
     // Send 'newMessageXml' to the server
-    fetch('add_message.php', {
+    fetch(file_name = nom_fichier2;, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/xml'
