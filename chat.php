@@ -49,7 +49,9 @@ function check_exist(name1, name2) {
 }
 
 function read_write_chatroom(namefile_xml){
-
+  fs.readFile(namefile_xml,'utf-8', (readError, data) => {
+    
+  }
 }
 
 
