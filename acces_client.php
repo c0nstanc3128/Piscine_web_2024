@@ -32,7 +32,7 @@ if($dbname){
 			if (mysqli_num_rows($result) > 0) {
 				// Afficher la ligne correspondante
 				$data = mysqli_fetch_assoc($result);
-                echo "<table border=\"1\">";
+                /*echo "<table border=\"1\">";
                 echo "<tr>";
                 echo "<th>ID</th>";
                 echo "<th>nom</th>";
@@ -49,7 +49,7 @@ if($dbname){
                 echo "<td>" . $data['TelContact'] . "</td>";
                 echo "<td>" . $data['MpContact'] . "</td>";
                 echo "</tr>";
-                echo "</table>";
+                echo "</table>";*/
 		header('Location: votre_compte.html');
 		exit();
 			} else {
