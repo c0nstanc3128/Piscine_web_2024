@@ -35,17 +35,22 @@ function check_exist(name1, name2) {
             if (err) {
                 console.log('The file does not exist.');
                 // Here you can call the function to create the file
+                
             } else {
                 console.log('The file exists.');
+              read_write_chatroom(nom_fichier2);
             }
         });
     } else {
         console.log('The file exists.');
+        read_write_chatroom(nom_fichier1);
     }
   });
 }
 
+function read_write_chatroom(namefile_xml){
 
+}
 
 
 // This is your XML data
