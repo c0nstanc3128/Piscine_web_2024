@@ -29,7 +29,7 @@
 </head>
 <body>
 <?php
-    require('db.php');
+    require('connect_to_database.php');
     session_start();
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {
