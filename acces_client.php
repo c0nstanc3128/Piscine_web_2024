@@ -1,4 +1,4 @@
-<?php
+/*<?php
 $servername = "120.0.0.1";
 $username = "root";
 $password = "";
@@ -59,4 +59,6 @@ if($dbname){
 }
 
 $conn->close();
-?>
+?>*/
+
+
