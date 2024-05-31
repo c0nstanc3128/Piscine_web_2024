@@ -8,6 +8,9 @@
 <h2>Chatroom</h2>
 
 <div id="chatroom"></div>
+<input id="username" type="text" placeholder="Your name">
+<input id="message" type="text" placeholder="Type your message here">
+<button onclick="addMessage()">Send</button>
 
 <script>
 
@@ -48,38 +51,46 @@ function check_exist(name1, name2) {
   });
 }
 
-function read_write_chatroom(namefile_xml){
+function read_chatroom(namefile_xml){
   fs.readFile(namefile_xml,'utf-8', (readError, data) => {
-    
-  }
+    if (readError) {
+        console.log("Error reading file:", readError);
+        return;
+    }
+    display_chatroom(namefile_xml);
+  };
+}
+function display_chatroom(fname){
+  // Fetch the XML data from the server
+    fetch(fname)
+        .then(response => response.text())
+        .then(data => {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(data, "text/xml");
+
+            // Get the chatroom div
+            var chatroomDiv = document.getElementById('chatroom');
+
+            // Clear the chatroom div
+            chatroomDiv.innerHTML = '';
+
+            // Loop through each message in the XML data
+            var messages = xmlDoc.getElementsByTagName('message');
+            for (var i = 0; i < messages.length; i++) {
+                var user = messages[i].getElementsByTagName('user')[0].childNodes[0].nodeValue;
+                var text = messages[i].getElementsByTagName('text')[0].childNodes[0].nodeValue;
+                var timestamp = messages[i].getElementsByTagName('timestamp')[0].childNodes[0].nodeValue;
+
+                // Create a new paragraph for each message and add it to the chatroom div
+                var p = document.createElement('p');
+                p.textContent = timestamp + ' - ' + user + ': ' + text;
+                chatroomDiv.appendChild(p);
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }
 
-
-// This is your XML data
-var xmlData = 
-
-// Parse the XML data
-var parser = new DOMParser();
-var xmlDoc = parser.parseFromString(xmlData, "text/xml");
-
-// Get the chatroom div
-var chatroomDiv = document.getElementById('chatroom');
-
-// Loop through each message in the XML data
-var messages = xmlDoc.getElementsByTagName('message');
-for (var i = 0; i < messages.length; i++) {
-  var user = messages[i].getElementsByTagName('user')[0].childNodes[0].nodeValue;
-  var text = messages[i].getElementsByTagName('text')[0].childNodes[0].nodeValue;
-
-  // Create a new paragraph for each message and add it to the chatroom div
-  var p = document.createElement('p');
-  p.textContent = user + ': ' + text;
-  chatroomDiv.appendChild(p);
-}
-
-
-
-  // Create a new DOMParser
+// Create a new DOMParser
 var parser = new DOMParser();
 
 // Create a new XML document
