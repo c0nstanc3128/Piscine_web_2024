@@ -160,35 +160,6 @@ function addMessage() {
 }
 
     
-    // Create a new DOMParser
-    var parser = new DOMParser();
-    
-    // Create a new XML document
-    var xmlDoc = parser.parseFromString('<chatroom></chatroom>', 'text/xml');
-    
-    // Create the first message (welcome message)
-    var message = xmlDoc.createElement('message');
-    var user = xmlDoc.createElement('user');
-    var text = xmlDoc.createElement('text');
-    var timestamp = xmlDoc.createElement('timestamp');
-    
-    user.appendChild(xmlDoc.createTextNode('System'));
-    text.appendChild(xmlDoc.createTextNode('Welcome to the new chatroom!'));
-    timestamp.appendChild(xmlDoc.createTextNode(new Date().toISOString()));
-    
-    message.appendChild(user);
-    message.appendChild(text);
-    message.appendChild(timestamp);
-    
-    // Add the message to the chatroom
-    xmlDoc.getElementsByTagName('chatroom')[0].appendChild(message);
-    
-    // Serialize the XML document to a string
-    var serializer = new XMLSerializer();
-    var xmlStr = serializer.serializeToString(xmlDoc);
-    
-    console.log(xmlStr);
-    
     </script>
   
   </body>
