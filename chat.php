@@ -28,7 +28,7 @@
         chatroomWindow.document.write('<h2>Chatroom</h2>');
         chatroomWindow.document.write('<div id="chatroom"></div>');
         chatroomWindow.document.write('<input id="username" type="text" placeholder="Your name">');
-        chatroomWindow.document.write('<input id="message" type="text" placeholder="Type your message here">');
+        chatroomWindow.document.write('<input id="text" type="text" placeholder="Type your message here">');
         chatroomWindow.document.write('<button onclick="addMessage()">Send</button>');
 
     var name1 = "<?php echo $Id_user; ?>";
@@ -96,7 +96,7 @@
                 // Loop through each message in the XML data
                 var messages = xmlDoc.getElementsByTagName('message');
                 for (var i = 0; i < messages.length; i++) {
-                    var user = messages[i].getElementsByTagName('user')[0].childNodes[0].nodeValue;
+                    var user = messages[i].getElementsByTagName('username')[0].childNodes[0].nodeValue;
                     var text = messages[i].getElementsByTagName('text')[0].childNodes[0].nodeValue;
                     var timestamp = messages[i].getElementsByTagName('timestamp')[0].childNodes[0].nodeValue;
     
@@ -108,6 +108,54 @@
             })
             .catch(error => console.error('Error:', error));
     }
+    // Function to add a message to the chatroom
+function addMessage() {
+    var usernameInput = document.getElementById('username');
+    var messageInput = document.getElementById('message');
+
+    var newMessage = {
+        timestamp: new Date().toISOString(),
+        username: usernameInput.value,
+        message: messageInput.value
+    };
+
+    // Convert 'newMessage' to an XML string
+    var newMessageXml = 
+        '<message>' +
+            '<timestamp>' + newMessage.timestamp + '</timestamp>' +
+            '<username>' + newMessage.username + '</username>' +
+            '<text>' + newMessage.message + '</text>' +
+        '</message>';
+
+    // Send 'newMessageXml' to the server
+    fetch('add_message.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/xml'
+        },
+        body: newMessageXml
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log('Message added:', data);
+
+        // Clear the input fields
+        usernameInput.value = '';
+        messageInput.value = '';
+
+        // Update the chatroom display
+        displayChatroom();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
     
     // Create a new DOMParser
     var parser = new DOMParser();
