@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <head>
     <link href="signup.php"
 </head>
@@ -7,7 +7,44 @@
 
 <h2>Formulaire de creation de compte client</h2>
 
-<form method=POST/GET action="<?php echo $_SERVER['PHP_SELF'];?>">
+<form method=POST/GET action="">
+
+    ID d'utilisateur: <button onclick="checkNumber()" name="user_id">génération de l'ID</button>
+    <br>
+	Email: <input type="email" name="mail">
+	<br>
+	Nom: <input type="text" name="Nom">
+	<br>
+	Prenom: <input type="text" name="Prenom">
+	<br>
+	Tel: <input type="tel" name="tel">
+	<br>
+    Mot de passe: <input type="password" name="password">
+	<br>
+	Verification Mot de passe: <input type="password" name="cpassword">
+    <br>
+    <input type="submit">
+</form>
+
+
+ 
+ 
+<script>
+function checkNumber() {
+  var randomNumber = Math.floor(Math.random() - 50) + 50; 
+}
+</script>*/
+
+<!--<!DOCTYPE html>
+<head>
+    <link href="signup.php"
+</head>
+<html>
+<body>
+
+<h2>Formulaire de creation de compte client</h2>
+
+<form method=POST/GET action="">
 
     ID d'utilisateur: <button onclick="checkNumber()" name="user_id">génération de l'ID</button>
     <br>
@@ -34,6 +71,112 @@ function checkNumber() {
   var randomNumber = Math.floor(Math.random() - 50) + 50; 
 }
 </script>
+
+
+</body>
+</html>-->
+
+<!-- sources : https://github.com/PHPMailer/PHPMailer/blob/master/examples/mail.phps
+	       https://speedysense.com/create-registration-login-system-php-mysql/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Creation de compte client</title>
+</head>
+<body>
+<?php
+    require('crea_session.php');
+    // When form submitted, insert values into the database.
+    if (isset($_REQUEST['username'])) {
+		
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
+		$Nom = $_REQUEST['nom'];
+		$prenom = $_REQUEST['prenom'];
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+		$cpassword = stripslashes($_REQUEST['check password']);
+        $cpassword = mysqli_real_escape_string($con, $cpassword);
+        $num_tel = $_REQUEST['tel'];
+		$sql = "Select * from `d_contact` where `IdContact`='$username' and `MailContact`='$email'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_num_rows($result);
+		if($row=0){
+			if($password=$cpassword){
+				$query    = "INSERT into `d_contact` (IdContact, MpContact, MailConctact, TelContact,FonctionContact)
+							 VALUES ('$username', '" . md5($password) . "', '$email', '$num_tel',3)";
+				$result   = mysqli_query($con, $query);
+				
+				//envoie d'un mail automatique
+				use PHPMailer\PHPMailer\PHPMailer;
+
+					require '../vendor/autoload.php';
+
+					//Create a new PHPMailer instance
+					$mail = new PHPMailer();
+					//Set who the message is to be sent from
+					$mail->setFrom('contact@sportify.fr', 'First Last');   
+					//Set an alternative reply-to address
+					//$mail->addReplyTo('replyto@example.com', 'First Last');
+					//Set who the message is to be sent to
+					$mail->addAddress(.$row['MailContact']., .$row['NomContact']. .$row['PrenomContact'].);
+					//Set the subject line
+					$mail->Subject = 'Sportify - Création de compte ';
+					//Replace the plain text body with one created manually
+					$mail->AltBody = 'Votre compte Sportify a bien été créer.  Votre ID est ';
+					$mail->AltBody = "<br>ID: " . $row['IdContact']. "<br> - Name: " . $row['NomContact']. .$row['PrenomContact']."
+					<br> - Email: " . $row['MailContact']. "<br>";
+					//Attach an image file
+					$mail->addAttachment('images/logospotify.png');											//mettre la bonne image
+
+					//send the message, check for errors
+					if (!$mail->send()) {
+						echo 'Mailer Error: le mail de creation de compte n\'a pas ete envoye' . $mail->ErrorInfo;
+					} else {
+						echo 'Message de creation de compte envoye!';
+					}
+			}
+		}
+        if ($result) {
+            echo "<div class='form'>
+                  <h3>You are registered successfully.</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  </div>";
+        } else {
+            echo "<div class='form'>
+                  <h3>Required fields are missing.</h3><br/>
+                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+                  </div>";
+        }
+    } else {
+?>
+    <form action="" method="post">
+        <h1 >Registration</h1>
+        <button name="username" onclick="checkNumber()" placeholder="Username">génération ID</button>
+		<input type="text" name="nom"><input type="text" name="prenom">
+        <input type="text" name="email" placeholder="Email Adress">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="Register">
+        <p><a href="acces_client.php">Click to Login</a></p>
+    </form>
+	<script>
+		function checkNumber() {
+		  var randomNumber = Math.floor(Math.random() - 50) + 50; 
+		}
+	</script>
+<?php
+    }
+?>
+</body>
+</html>
+
+
 
 
 </body>
