@@ -12,13 +12,17 @@
 </head>
 <html>
   <body>
+      
+
   
     <h2>Chatroom</h2>
     
     <button onclick="openChatroom()">Open Chatroom</button>
     
     <script>
-    
+
+    const fs = require('fs');
+   
     function openChatroom() {
         var chatroomWindow = window.open('', 'Chatroom', 'width=500,height=500');
         chatroomWindow.document.write('<h2>Chatroom</h2>');
@@ -26,16 +30,17 @@
         chatroomWindow.document.write('<input id="username" type="text" placeholder="Your name">');
         chatroomWindow.document.write('<input id="message" type="text" placeholder="Type your message here">');
         chatroomWindow.document.write('<button onclick="addMessage()">Send</button>');
+
+    var name1 = "<?php echo $Id_user; ?>";
+    var name2 = "<?php echo $Id_contact; ?>";
+    check_exist(name1,name2);
     }
-    
-    const fs = require('fs');
-    
     function chatroom(name1, name2) {
+
       var s_name1 = name1.replace(/[^a-z0-9]/gi, '_').toLowerCase();
       var s_name2 = name2.replace(/[^a-z0-9]/gi, '_').toLowerCase();
       return [s_name1, s_name2];
     }
-    
     function crea_fichier(name1, name2) {
       //création du nom du fichier xml
       var [s_name1, s_name2] = chatroom(name1, name2);
@@ -55,12 +60,12 @@
                     
                 } else {
                     console.log('The file exists.');
-                  read_write_chatroom(nom_fichier2);
+                  read_chatroom(nom_fichier2);
                 }
             });
         } else {
             console.log('The file exists.');
-            read_write_chatroom(nom_fichier1);
+            read_chatroom(nom_fichier1);
         }
       });
     }
