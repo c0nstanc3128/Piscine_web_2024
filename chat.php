@@ -1,6 +1,6 @@
 <?php
-require('login.php');
-$charset = 'utf8mb4';
+require('votre_compte.html');
+$charset = 'utf-8';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $opt = [
