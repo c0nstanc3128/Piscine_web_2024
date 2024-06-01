@@ -52,43 +52,49 @@ $fonction = "select d_contact.IdFonction from `d_contact` JOIN `d_coach` ON d_co
 if($fonction=1){
     $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
     $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin
-     if($res=1)//la ligne existe
-      {
+    if($res=1)//la ligne existe
+    {
         while($res->fetch_assoc()){
-          
+        echo "column1: " . $row["column1"]. " - column2: " . $row["column2"]. "<br>";
         }
-      }
+    } 
+
+      
 ?>
 <?php
       }
 ?>
 <?php
-if($foncion =2){
+if($fonction=1){
     $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
-    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = 
-     if($res=1)//la ligne existe
-      {
+    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin
+    if($res=1)//la ligne existe
+    {
         while($res->fetch_assoc()){
-          
+        echo "<div align = "center"> Nom :" . $row["NomContact"]. " - Prénom : " . $row["PrenomContact"]. "<\div><br>";
         }
-      }
+    } 
+
+      
 ?>
 <?php
       }
 ?>
 <?php
 if($function=3){
-    $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
+    $nom_function = "select * from p_fonction where ìdfonction='$fonction'";
+    $sql = "select * from `d_contact` JOIN `d_client` ON d_contact.IdContact =d_client.idcontactclient"; 
     $res=sqli_query($conn,$nom_function);
-      if($res=1)//la ligne existe
-      {
+    $res_data=sqli_query($conn,$sql);
+    if($res=1 and $res_data=1)//la ligne existe dans les 2 tableaux
+    {
         while($res->fetch_assoc()){
-          
+            echo "<div> Compte : " .$row['p_fonction']"<\div><br>";
+            while(res_data->fetch_assoc()){
+                echo "<div align = "center"> Nom :" . $row["NomContact"]. " - Prénom : " . $row["PrenomContact"]. "<\div><br>";
+            }
         }
-      }
-      
-      $sql = "select * from `d_contact` JOIN `d_client` ON d_contact.IdContact =d_client.idcontactclient"; 
-    
+    }     
 ?>
       
 <?php
