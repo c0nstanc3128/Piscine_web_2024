@@ -50,16 +50,28 @@ $fonction = "select d_contact.IdFonction from `d_contact` JOIN `d_coach` ON d_co
 
 <?php
 if($fonction=1){
-    $nom_function = "select ";
+    $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
     $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin
+     if($res=1)//la ligne existe
+      {
+        while($res->fetch_assoc()){
+          
+        }
+      }
 ?>
 <?php
       }
 ?>
 <?php
 if($foncion =2){
-    $nom_function = "";
+    $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
     $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = 
+     if($res=1)//la ligne existe
+      {
+        while($res->fetch_assoc()){
+          
+        }
+      }
 ?>
 <?php
       }
