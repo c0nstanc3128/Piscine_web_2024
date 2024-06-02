@@ -1,0 +1,26 @@
+
+CREATE TABLE personnel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Photo VARCHAR(255),
+    Nom_coach VARCHAR(255),
+    Prenom_coach VARCHAR(255),
+    Categorie VARCHAR(255),
+    Sport VARCHAR(255),
+    Salle VARCHAR(255),
+    Lien VARCHAR(255)
+);
+
+
+INSERT INTO personnel (Photo, Nom_coach, Prenom_coach, Categorie, Sport, Salle, Lien) VALUES
+('images/coach_muscu.jpg', 'Dupont', 'Pierre', 'Activité Sportive', 'Musculation', 'B203', 'coach_musculation.html'),
+('images/coach_fit.jpg', 'Dubois', 'Emma', 'Activité Sportive', 'Fitness' , 'B201', 'coach_fitness.html'),
+('images/coach_biking.jpg', 'Johnson', 'Olivia', 'Activité Sportive', 'Biking', 'B202', 'coach_biking.html'),
+('images/coach_cardio', 'Jie', 'Eric', 'Activité Sportive', 'Cardio-Training', 'B204', 'coach_cardio_training.html'),
+('images/coach_cours.jpg', 'Martin', 'Noah', 'Activité Sportive', 'Sport Collectif', 'B205', 'coach_cours_collectifs.html'),
+('images/coach_basket.jpg', 'Smith', 'Liam', 'Sport de compétition', 'Basketball', 'B206', 'coach_basketball.html'),
+('images/coach_foot.jpg', 'Kouadio', 'Mamadou', 'Sport de compétition', 'Football', 'B207', 'coach_footbal.html'),
+('images/coach_rugby.jpg', 'Rocci', 'Luca', 'Sport de compétition', 'Rugby', 'B208', 'coach_rugby.html'),
+('images/coach_tennis.html', 'Bernard', 'Lea', 'Sport de compétition', 'Tennis', 'B209', 'coach_tennis.html'),
+('images/coach_nat.jpg', 'Mareau', 'Martin', 'Sport de compétition', 'Natation', 'B210', 'coach_natation.html'),
+('images/coach_plongeon.jpg', 'Kim', 'Sophie', 'Sport de compétition', 'Plongeon', 'B211', 'coach_natation.html);
+
