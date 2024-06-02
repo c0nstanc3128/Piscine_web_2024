@@ -1,19 +1,11 @@
 <?php
 require('votre_compte.html');
-$charset = 'utf-8';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$opt = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-$pdo = new PDO($dsn, $user, $pass, $opt);
+require_once('connect_to_database.php');
 
 if($_POST){
     $username = $_POST['username'];
     $message = $_POST['message'];
-    $sql = "INSERT INTO messages (username, message) VALUES (?, ?)";
+    $sql = "INSERT INTO messages (username, message) VALUES ($username, $message)";
     $stmt= $pdo->prepare($sql);
     $stmt->execute([$username, $message]);
 }
