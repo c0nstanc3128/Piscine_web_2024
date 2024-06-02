@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<personnel>
+	<Person>
+		<LastName>Dupont</LastName>
+		<FirstName>Pierre</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Activité Sportive</SportCategory>
+		<Sport>Musculation</Sport>
+		<Languages>Français</Languages>
+	</Person>
+		<Person>
+		<LastName>Dubois</LastName>
+		<FirstName>Emma</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Activité Sportive</SportCategory>
+		<Sport>Fitness</Sport>
+		<Languages>Français/Anglais</Languages>
+	</Person>
+	<Person>
+		<LastName>Johnson</LastName>
+		<FirstName>Olivia</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Activité Sportive</SportCategory>
+		<Sport>Biking</Sport>
+		<Languages>Français/Anglais</Languages>
+	</Person>
+		<Person>
+		<LastName>Jie</LastName>
+		<FirstName>Eric</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Activité Sportive</SportCategory>
+		<Sport>Cardio-Training</Sport>
+		<Languages>Français/Anglais/Chinois</Languages>
+	</Person>
+		<Person>
+		<LastName>Martin</LastName>
+		<FirstName>Noah</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Activité Sportive</SportCategory>
+		<Sport>Sport Collectif</Sport>
+		<Languages>Français</Languages>
+	</Person>
+
+		<Person>
+		<LastName>Smith</LastName>
+		<FirstName>Liam</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Basketball</Sport>
+		<Languages>Français/Anglais</Languages>
+	</Person>
+	
+
+		<Person>
+		<LastName>Kouadio</LastName>
+		<FirstName>Mamadou</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Football</Sport>
+		<Languages>Français</Languages>
+	</Person>
+
+		<Person>
+		<LastName>Rocci</LastName>
+		<FirstName>Luca</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Rugby</Sport>
+		<Languages>Français/Italien</Languages>
+	</Person>
+
+		<Person>
+		<LastName>Bernard</LastName>
+		<FirstName>Lea</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Tennis</Sport>
+		<Languages>Français/Anglais</Languages>
+	</Person>
+
+		<Person>
+		<LastName>Mareau</LastName>
+		<FirstName>Martin</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Natation</Sport>
+		<Languages>Français/Anglais</Languages>
+	</Person>
+
+		<Person>
+		<LastName>Kim</LastName>
+		<FirstName>Sophie</FirstName>
+		<Position>Entraîneur Principal</Position>
+		<SportCategory>Sport de compétition</SportCategory>
+		<Sport>Plongeon</Sport>
+		<Languages>Français/Anglais/coreen</Languages>
+	</Person>
+</personnel>
