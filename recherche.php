@@ -41,17 +41,13 @@
                 <div class="container-fluid" style="margin-top: 18px; margin-bottom: 18px;">
                     <table>
                         <tr>
+							<th class="th-personnel">Photo</th>
                             <th class="th-personnel">Nom</th>
                             <th class="th-personnel">Prénom</th>
-                            <th class="th-personnel">Type d'activité</th>
-                            <th class="th-personnel">Activité</th>
-                            <th class="th-personnel">Bureau</th>
+                            <th class="th-personnel">Categorie</th>
+							<th class="th-personnel">Sport</th>
                             <th class="th-personnel">Salle</th>
-                            <th class="th-personnel">Téléphone</th> 
-                            <th class="th-personnel">Courriel</th>
-                            <th class="th-personnel">Photo</th>
-                            <th class="th-personnel">Voir le CV</th>
-                            <th class="th-personnel">Lien vers la page</th>
+                            <th class="th-personnel">Lire Plus</th>
                         </tr>
                         <?php
                             if(isset($_POST['recherche'])) {
