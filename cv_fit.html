@@ -36,7 +36,7 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div>	
 		<div class="coach_container">
 			<div id="cv-container" class="cv-container">
 					<!--contenu du cv venant de cv_coach.xml-->
@@ -49,7 +49,7 @@
 						url: "cv_coach.xml",
 						dataType: "xml",
 						success: function(data) {
-							var coachName = "Dupont Pierre";
+							var coachName = "Dubois Emma";
 							afficherCVs(data, coachName);
 						},
 						error: function(jqXHR, textStatus, errorThrown) {
@@ -80,7 +80,7 @@
 								var header = $("<h2>").text(nom);
 								nameDiv.append(header);
 								
-								var img = $("<img>").attr("src", "images/coach_muscu.jpg").addClass("rounded-circle img-circle").attr("alt", "coach_basketball").css("width", "100%").css("height", "auto");
+								var img = $("<img>").attr("src", "images/coach_fit.jpg").addClass("rounded-circle img-circle").attr("alt", "coach_basketball").css("width", "100%").css("height", "auto");
 								imageDiv.append(img);
 
 								headerDiv.append(imageDiv).append(nameDiv).css("display", "flex").css("align-items", "center").css("margin-bottom", "30px");
