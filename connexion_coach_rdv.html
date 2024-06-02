@@ -1,27 +1,40 @@
 
 <?php
-    session_start();
-    require('connect_to_database.php');
-    if (isset($_POST['submit'])) {
-        $email = $_POST['username'];
-        $mdp = $_POST['motdepasse'];
+session_start();
+if (isset($_POST['valider'])) {
+    if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "Sportify";
 
-        $query = "SELECT * FROM Clients WHERE Mail_client = '$email' AND Mdp_client = '$mdp'";
-        $result = sqli_query($conn,$query);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-        if ($result !== false) {
-            if ($result = 1) {
-                $row = $result->fetch_assoc();
-                $_SESSION['id_client'] = $row['Id_client'];
-                header("Location: client_rdv.php");
-                exit;
-            } else {
-                $error_message = "Votre mot de passe ou courriel est incorrect.";
-            }
-        } else {
-            $error_message = "Erreur lors de l'exécution de la requête : " . $conn->error;
+        if ($conn->connect_error) {
+            die("Connexion échouée: " . $conn->connect_error);
         }
+
+        $email_saisi = mysqli_real_escape_string($conn, $_POST['email']);
+        $mdp_saisi = mysqli_real_escape_string($conn, $_POST['mdp']);
+
+        $query = "SELECT * FROM Coach WHERE Mail_coach = '$email_saisi' AND Mdp_coach = '$mdp_saisi'";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $_SESSION['mdp'] = true;
+            $_SESSION['id_coach'] = $row['Id_coach'];
+            header("Location: coach_rdv.php");
+            exit;
+        } else {
+            echo "Votre mot de passe ou e-mail est incorrect";
+        }
+
+        $conn->close();
+    } else {
+        echo "Veuillez compléter tous les champs";
     }
+}
 ?>
 
 <html>
@@ -62,27 +75,45 @@
                 </ul>
             </div>
         </div> 
-    <main>
-        <div class="container-fluid">
-            <div class="title">
-                <h2 style="margin-top: 20px;">Connexion</h2>
-            </div>
-            <form method="POST" action="connexion_client_rdv.html" class="container d-flex flex-column align-items-center">
-                <input style="width: 25%;" type="email" name="username" placeholder="Courriel" required>
-                <input style="width: 25%;" type="password" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
-                <div class="radio-container">
-                    <input type="checkbox" onclick="afficher()" label="afficher">
-                    <label class="title">Afficher</label>
+            <main>
+                <div class="container-fluid">
+                    <div class="title">
+                        <h1 style="margin-top: 20px;">Connexion</h1>
+                    </div>
+                    <form method="POST" action="connexion_coach_rdv.php" class="container d-flex flex-column align-items-center">
+                        <input style="width: 25%;" type="email" name="email" placeholder="Courriel" required>
+                        <input style="width: 25%;" type="password" name="mdp" id="motdepasse" placeholder="Mot de passe" required>
+                        <div class="radio-container">
+                            <input type="checkbox" onclick="afficher()" id="afficher_mdp">
+                            <label class="title" for="afficher_mdp">Afficher</label>
+                        </div>
+                        <input style="width: 25%;" type="submit" name="valider" value="Se connecter">
+                    </form>
+                    <div class="container" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">
+                        <p>Vous n'avez pas de compte ? Contacter un Administrateur :</p>
+                        
+                        <div class="container">
+                            <p>- Charina Shane Luzano :</p>
+                            <a class="member-link" href="mailto:charinashane.luzano@edu.ece.fr" style="font-family: Georgia, 'Times New Roman', Times, serif;">charinashane.luzano@edu.ece.fr</a>
+                        </div>
+
+                        <div class="container">
+                            <p>- Constance SAMANIEGO :</p>
+                            <a class="member-link" href="mailto:constance.samaniego@edu.ece.fr" style="font-family: Georgia, 'Times New Roman', Times, serif;">constance.samaniego@edu.ece.fr</a>
+                        </div>
+
+                        <div class="container">
+                            <p>- David Stan :</p>
+                            <a class="member-link" href="mailto:david.stan@edu.ece.fr" style="font-family: Georgia, 'Times New Roman', Times, serif;">david.stan@edu.ece.fr</a>
+                        </div>
+
+                        <div class="container">
+                            <p>- Léo-Pol Bernard-Chaussé:</p>
+                            <a class="member-link" href="mailto:leo-pol.bernard-chausse@edu.ece.fr" style="font-family: Georgia, 'Times New Roman', Times, serif;">leo-pol.bernard-chausse@edu.ece.fr</a>
+                        </div>
+                    </div>
                 </div>
-                <input style="width: 25%;" type="submit" name="submit" value="Se connecter">
-                <a style="width: 25%;" class="btncompte" href="creation_compte.html">Créer un compte</a>
-                <?php if (isset($error_message)) { ?>
-                    <p style="color: red;"><?php echo $error_message; ?></p>
-                <?php } ?>
-            </form>
-        </div>
-    </main>
-     <!-- Footer -->
+            <!-- Footer -->
         <div class="page-footer">
             <div class="container">
                 <div class="row">
@@ -117,16 +148,6 @@
                 </div>
             </div>
         </div>
-    <script>
-        function afficher() {
-            var x = document.getElementById("motdepasse");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-        }
-    </script>
-</div>
+    </div>
 </body>
 </html>
