@@ -51,31 +51,51 @@ $fonction = "select d_contact.IdFonction from `d_contact` JOIN `d_coach` ON d_co
 <?php
 if($fonction=1){
     $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
-    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin
+    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin";
     if($res=1)//la ligne existe
     {
-        while($res->fetch_assoc()){
-        echo "column1: " . $row["column1"]. " - column2: " . $row["column2"]. "<br>";
+        wwhile($res->fetch_assoc()){
+            echo "<div> Compte : " .$row['p_fonction']"<\div><br>";
+            while(res_data->fetch_assoc()){
+                echo "<div align = "center"> Nom :" . $row["NomContact"]. " - Prénom : " . $row["PrenomContact"]. "<\div><br>";
+            }
         }
-    } 
-
-      
+    }
+  
 ?>
 <?php
       }
 ?>
 <?php
-if($fonction=1){
+if($fonction=2){
     $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
-    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin
+    $sql = "select * from `d_contact` JOIN `d_coach` ON d_contact.IdContact =d_coach.Idcontactcoach join `p_sport` on p_sport.idspe=d_coach.idspe"; 
+    $res=sqli_query($conn,$nom_function);
+    $res_data=sqli_query($conn,$sql);
     if($res=1)//la ligne existe
     {
         while($res->fetch_assoc()){
-        echo "<div align = "center"> Nom :" . $row["NomContact"]. " - Prénom : " . $row["PrenomContact"]. "<\div><br>";
+            echo "<div> Compte : " .$row['p_fonction']"<\div><br>";
+            while(res_data->fetch_assoc()){
+                echo "<div align = "center"> Nom :" . $row_data["NomContact"]. " - Prénom : " . $row_data["PrenomContact"]. "<\div><br>";
+                echo "<br><div align="center">".$row_data['p_sport.nomspe']."</div>"
+            }
         }
     } 
 
-      
+    $nom_function = "select * from p_fonction where ìdfonction='$fonction'";
+    $sql = "select * from `d_contact` JOIN `d_client` ON d_contact.IdContact =d_client.idcontactclient"; 
+    $res=sqli_query($conn,$nom_function);
+    $res_data=sqli_query($conn,$sql);
+    if($res=1 and $res_data=1)//la ligne existe dans les 2 tableaux
+    {
+        while($res->fetch_assoc()){
+            echo "<div> Compte : " .$row['p_fonction']"<\div><br>";
+            while(res_data->fetch_assoc()){
+                echo "<div align = "center"> Nom :" . $row_data["NomContact"]. " - Prénom : " . $row_data["PrenomContact"]. "<\div><br>";
+            }
+        }
+    }    
 ?>
 <?php
       }
@@ -91,7 +111,7 @@ if($function=3){
         while($res->fetch_assoc()){
             echo "<div> Compte : " .$row['p_fonction']"<\div><br>";
             while(res_data->fetch_assoc()){
-                echo "<div align = "center"> Nom :" . $row["NomContact"]. " - Prénom : " . $row["PrenomContact"]. "<\div><br>";
+                echo "<div align = "center"> Nom :" . $row_data["NomContact"]. " - Prénom : " . $row_data["PrenomContact"]. "<\div><br>";
             }
         }
     }     
