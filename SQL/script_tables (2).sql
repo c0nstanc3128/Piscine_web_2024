@@ -108,3 +108,8 @@ CREATE TABLE P_TypeCarte(
 	IdTypeCarte int NOT NULL,
 	NomTypeCarte varchar(50) NOT NULL
 );
+
+CREATE TABLE messages(
+	username(250) NOT NULL,
+	message(250) NOT NULL
+);
