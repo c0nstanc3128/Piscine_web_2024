@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $_SESSION['id_client'] = $row['Id_client'];
-            header("Location: RDVClient.php");
+            header("Location: client_rdv.php");
             exit;
         } else {
             $error_message = "Votre mot de passe ou courriel est incorrect.";
@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
     <main>
         <div class="container-fluid">
             <div class="title">
-                <h1 style="margin-top: 20px;">Connexion</h1>
+                <h2 style="margin-top: 20px;">Connexion</h2>
             </div>
             <form method="POST" action="compteconnexion_client_rdv.php" class="container d-flex flex-column align-items-center">
                 <input style="width: 25%;" type="email" name="username" placeholder="Courriel" required>
