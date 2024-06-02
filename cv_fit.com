@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- ce code est à retirer, cv_fit.html a ete rajoute -->
 <html>
 	<head>
 		<title>CV des Coachs</title>
