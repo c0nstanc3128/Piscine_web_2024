@@ -4,19 +4,7 @@
 	$showError = false;
 	$exists = false;
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-		// Include file which makes the
-		// Database Connection.
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-
-		$database = "piscine";
-
-	// Create a connection
-		$conn = mysqli_connect($servername,
-			$username, $password, $database);
+	require_once('connect_to_database.php');
 
 	// Code written below is a step taken
 	// to check that our Database is
