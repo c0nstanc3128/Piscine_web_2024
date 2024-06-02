@@ -51,7 +51,7 @@ $fonction = "select d_contact.IdFonction from `d_contact` JOIN `d_coach` ON d_co
 <?php
 if($fonction=1){
     $nom_function = "select NomFonction from p_fonction where ìdfonction='$fonction'";
-    $sql = "select * from `d_contact` JOIN  ON d_contact.IdContact = d_admin";
+    $sql = "select * from `d_contact` ";
     if($res=1)//la ligne existe
     {
         wwhile($res->fetch_assoc()){
